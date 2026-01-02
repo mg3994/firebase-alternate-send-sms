@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1074037078458",
+    "project_id": "lethelpsms",
+    "storage_bucket": "lethelpsms.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1074037078458:android:072b7d30a4105b9fccc583",
+        "android_client_info": {
+          "package_name": "com.antinna.lethelpsms"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoI-hnDT6ACspy722CyHqMLLRYdHaR-WQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
