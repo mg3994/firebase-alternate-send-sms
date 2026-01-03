@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package sms_relay;
+
+option java_package = "com.antinna.lethelpsms.proto";
+option java_multiple_files = true;
+
+service SmsRelayService {
+    // Registered a device when it comes online or first installs the app
+    rpc RegisterDevice (DeviceRegistrationRequest) returns (RegistrationResponse);
+
+    // Updates the FCM token if it changes
+    rpc UpdateToken (TokenUpdateRequest) returns (Empty);
+
+    // Reports the status of a sent SMS
+    rpc ReportSmsStatus (SmsStatusReport) returns (Empty);
+}
+
+message DeviceRegistrationRequest {
+    string device_id = 1;
+    string fcm_token = 2;
+    repeated string capabilities = 3; // e.g., "SMS", "MMS"
+}
+
+message RegistrationResponse {
+    bool success = 1;
+    string message = 2;
+}
+
+message TokenUpdateRequest {
+    string device_id = 1;
+    string new_fcm_token = 2;
+}
+
+message SmsStatusReport {
+    string sms_id = 1;
+    string device_id = 2;
+    bool success = 3;
+    string error_message = 4; // Optional, empty if success
+}
+
+message Empty {}
